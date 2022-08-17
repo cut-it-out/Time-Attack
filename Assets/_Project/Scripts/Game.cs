@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : Singleton<Game>
+namespace TimeAttack
 {
-    
+    public class Game : Singleton<Game>
+    {
+        
 
+    }
 }
