@@ -17,6 +17,9 @@ namespace TimeAttack
         [SerializeField] float playerXPosition = 0f;
         [SerializeField] float playerYPosition = -12f;
         
+        [Header("Events")]
+        [SerializeField] GameEventFloatSO ModifyTimerEvent;
+
         private Vector2 minBounds;
         private Vector2 maxBounds;
         private Vector2 movingDirection;
@@ -53,7 +56,12 @@ namespace TimeAttack
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            
+            Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+            if (projectile != null)
+            {
+                ModifyTimerEvent.RaiseEvent(projectile.TimeValue);
+                projectile.DestroySelf();
+            }
         }
 
         private void InitBounds()

@@ -11,13 +11,14 @@ namespace TimeAttack
 
         [Header("Listening for")]
         [SerializeField] GameEventFloatSO ModifyTimerEvent;
-        [SerializeField] GameEventBoolSO onPauseEvent;
+        [SerializeField] GameEventBoolSO PauseGameEvent;
         [SerializeField] GameEventVoidSO onStartButtonClick;
         [SerializeField] GameEventVoidSO onRestartButtonClick;
         [SerializeField] GameEventVoidSO onQuitButtonClick;
 
         [Header("Broadcasting on")]
         [SerializeField] GameEventFloatSO onTimerUpdated;
+        [SerializeField] GameEventVoidSO onGameOver;
 
         public float GameCountDownTime { get; private set; }
         private Coroutine countdownTimerCR;
@@ -39,12 +40,19 @@ namespace TimeAttack
         {
             canvasManager = CanvasManager.GetInstance();
             ModifyTimerEvent.OnEventRaised += UpdateCountdownTimer;
-            onPauseEvent.OnEventRaised += PauseGame;
+            PauseGameEvent.OnEventRaised += PauseGame;
             onStartButtonClick.OnEventRaised += StartGame;
             onRestartButtonClick.OnEventRaised += RestartGame;
             onQuitButtonClick.OnEventRaised += ExitGame;
 
+            InputManager.GetInstance().OnPauseMenuToggle += OnPauseKeyToggle;
+
             //StartGame();
+        }
+
+        private void OnPauseKeyToggle()
+        {
+            PauseGameEvent.RaiseEvent(!IsPaused);
         }
 
         #region Basic Game Stuff (start, reset, pause, etc)
@@ -67,6 +75,7 @@ namespace TimeAttack
         private void GameOver()
         {
             StopCountdownTimer();
+            onGameOver.RaiseEvent();
 
             // display gameover screen
             IsGameOver = true;

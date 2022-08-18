@@ -346,6 +346,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98c023c7584ca49b5effb748f2aae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &616598304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8990340703631261319, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
+  m_PrefabInstance: {fileID: 8990340703990516826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &616598307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616598304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418c202b2e7514440b5d021f23a4c934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3255824618535065694, guid: 8d9313df9278cd94fae53519ccd141b8, type: 3}
+  target: {fileID: 732970029}
+  speed: 10
+  damageMin: 10
+  damageMax: 30
+  damageIsNegative: 0
+  shootInterval: 1.2
+  onGameStart: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
+  onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +601,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starterCanvasType: 1
+--- !u!1 &732970029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5745948273983947180, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+  m_PrefabInstance: {fileID: 5745948275861469854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2035190963 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 622344817911796706, guid: cbf153426ebfa0f4187d177a42dfc47f, type: 3}
@@ -732,6 +763,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bad_Clock
       objectReference: {fileID: 0}
+    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 732970029}
+    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
 --- !u!1001 &3190633749319393607
@@ -934,6 +973,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
+      propertyPath: onGameOver
+      value: 
+      objectReference: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
+    - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
+      propertyPath: PauseGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 403ab536c8f572f4cae9edf5693850aa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
 --- !u!1001 &5745948275861469854
@@ -943,30 +990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 202527929440204209, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: onTimerChanged
+    - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: ModifyTimerEvent
       value: 
-      objectReference: {fileID: 11400000, guid: b5300ab32ae0ce64eaada3609d6892f5, type: 2}
-    - target: {fileID: 1250155020645585227, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2224315949149288134, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2224315949149288134, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2224315949149288134, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2224315949149288134, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 365d4409c8138e348bd05fd46eb65bc8, type: 2}
     - target: {fileID: 5745948273983947180, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1015,9 +1042,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6156332062035660326, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
+    - target: {fileID: 7984702923410212016, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
