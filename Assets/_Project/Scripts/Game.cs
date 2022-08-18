@@ -9,8 +9,14 @@ namespace TimeAttack
     {
         [SerializeField] float initialTimerValue = 70f;
 
-        [Header("Events")]
-        [SerializeField] GameEventFloatSO TimerModified;
+        [Header("Listening for")]
+        [SerializeField] GameEventFloatSO ModifyTimerEvent;
+        [SerializeField] GameEventBoolSO onPauseEvent;
+        [SerializeField] GameEventVoidSO onStartButtonClick;
+        [SerializeField] GameEventVoidSO onRestartButtonClick;
+        [SerializeField] GameEventVoidSO onQuitButtonClick;
+
+        [Header("Broadcasting on")]
         [SerializeField] GameEventFloatSO onTimerUpdated;
 
         public float GameCountDownTime { get; private set; }
@@ -21,49 +27,72 @@ namespace TimeAttack
         public bool IsPaused { get; private set; }
         public bool IsGameOver { get; private set; } = false;
 
+        // cached vars
+        private CanvasManager canvasManager;
+
         protected override void Awake()
         {
-            base.Awake();
-
+            base.Awake();            
         }
 
         private void Start()
         {
-            TimerModified.OnEventRaised += UpdateCountdownTimer;
+            canvasManager = CanvasManager.GetInstance();
+            ModifyTimerEvent.OnEventRaised += UpdateCountdownTimer;
+            onPauseEvent.OnEventRaised += PauseGame;
+            onStartButtonClick.OnEventRaised += StartGame;
+            onRestartButtonClick.OnEventRaised += RestartGame;
+            onQuitButtonClick.OnEventRaised += ExitGame;
 
-            StartGame();
+            //StartGame();
         }
 
         #region Basic Game Stuff (start, reset, pause, etc)
 
         private void StartGame()
         {
+            StopCountdownTimer();
             IsGameOver = false;
             PauseGame(false); // to make sure we don't stuck in pause
 
+            canvasManager.SwitchCanvas(CanvasType.GameUI);
             InitCountdownTimer(initialTimerValue);
+
         }
 
         public void RestartGame()
-        {
-            StopCountdownTimer();
-            IsPaused = true;
-
+        {            
             StartGame();
         }
         private void GameOver()
         {
             StopCountdownTimer();
-            
+
             // display gameover screen
             IsGameOver = true;
-            IsPaused = true;
+            canvasManager.SwitchCanvas(CanvasType.GameOverUI);
         }
 
         private void PauseGame(bool value)
         {
+            if (value)
+            {
+                canvasManager.SwitchCanvas(CanvasType.PauseMenuUI);
+            } 
+            else
+            {
+                canvasManager.SwitchCanvas(CanvasType.GameUI);
+            }
             Time.timeScale = value == true ? 0f : 1f;
             IsPaused = value;
+        }
+
+        private void ExitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            Application.Quit();
         }
 
         #endregion
