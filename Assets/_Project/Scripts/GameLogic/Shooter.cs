@@ -7,39 +7,47 @@ namespace TimeAttack
 {
     public class Shooter : MonoBehaviour
     {
-        [SerializeField] GameObject projectilePrefab;
-        [SerializeField] GameObject target = null;
-        [SerializeField] float speed = 10f;
-        [SerializeField] float damageMin = 10f;
-        [SerializeField] float damageMax = 30f;
-        [SerializeField] bool damageIsNegative = true;
-        [SerializeField] float shootInterval = 1f;
+        [SerializeField] ShooterSettingsSO shooterSettings;
 
         [SerializeField] GameEventVoidSO onGameStart;
         [SerializeField] GameEventVoidSO onGameOver;
 
-        Coroutine shooterCR;
+        public bool IsShooting { get; private set; } = false;
+
+        private Coroutine shooterCR;
+        private GameObject playerObject;
 
         private void Start()
         {
+            playerObject = Game.GetInstance().Player;
             onGameStart.OnEventRaised += InitShooting;
             onGameOver.OnEventRaised += StopShooting;
         }
 
         private void InitShooting()
         {
+            IsShooting = true;
             shooterCR = StartCoroutine(StartShooting());
         }
 
         IEnumerator StartShooting()
         {
-            while (true)
+            while (IsShooting)
             {
-                Vector2 direction = (target.transform.position - this.transform.position).normalized;
-                float damageValue = (damageIsNegative == true ? -1f : 1f) * UnityEngine.Random.Range(damageMin, damageMax);
-                Projectile.Create(projectilePrefab.transform, transform.position, speed, direction, damageValue);
+                Vector2 direction = (playerObject.transform.position - this.transform.position).normalized;
+                Projectile.Create(
+                    shooterSettings.ProjectilePrefab.transform, 
+                    transform.position,
+                    shooterSettings.AttackType,
+                    shooterSettings.Speed,
+                    shooterSettings.SmoothTime,
+                    direction,
+                    shooterSettings.ScaleUpTargetMultiplier,
+                    shooterSettings.RandomRotation,
+                    shooterSettings.RandomDamage,
+                    shooterSettings.ProjectileAliveTime);
                 
-                yield return new WaitForSeconds(shootInterval);
+                yield return new WaitForSeconds(shooterSettings.ShootInterval);
             }
         }
 
@@ -47,6 +55,7 @@ namespace TimeAttack
         {
             if (shooterCR != null) StopCoroutine(shooterCR);
             shooterCR = null;
+            IsShooting = false;
         }
 
 

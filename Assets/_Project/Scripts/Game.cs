@@ -20,6 +20,9 @@ namespace TimeAttack
         [SerializeField] GameEventFloatSO onTimerUpdated;
         [SerializeField] GameEventVoidSO onGameOver;
 
+        [Header("Player")]
+        [SerializeField] GameObject playerObject;
+
         public float GameCountDownTime { get; private set; }
         public float GameScoreTime { get; private set; }
         private Coroutine countdownTimerCR;
@@ -29,6 +32,7 @@ namespace TimeAttack
         // Game related
         public bool IsPaused { get; private set; }
         public bool IsGameOver { get; private set; } = false;
+        public GameObject Player { get { return playerObject; } }
 
         // cached vars
         private CanvasManager canvasManager;

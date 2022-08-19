@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b45a3739a70ab6469ec3df332ac645d, type: 3}
+  m_Name: Attack Level 01
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
+  attackType: 1
+  shootInterval: 2
+  speed: 2.9
+  rotationLimits: {x: -78, y: -9}
+  scaleUpTargetMultiplier: 60
+  smoothTime: 4.07
+  damageLimits: {x: 20, y: 30}
+  damageIsNegative: 1
+  aliveTime: 7

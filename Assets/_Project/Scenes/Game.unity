@@ -363,13 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418c202b2e7514440b5d021f23a4c934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3255824618535065694, guid: 8d9313df9278cd94fae53519ccd141b8, type: 3}
-  target: {fileID: 732970029}
-  speed: 10
-  damageMin: 10
-  damageMax: 30
-  damageIsNegative: 0
-  shootInterval: 1.2
+  shooterSettings: {fileID: 11400000, guid: 9b91bb4608411064382f537931a61b32, type: 2}
   onGameStart: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
   onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
 --- !u!1 &619394800
@@ -872,6 +866,10 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: shooterSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: ab94490609fc97143acdda5f6658492c, type: 2}
+    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
@@ -1082,13 +1080,9 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
-      propertyPath: onGameOver
+      propertyPath: playerObject
       value: 
-      objectReference: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
-    - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
-      propertyPath: PauseGameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 403ab536c8f572f4cae9edf5693850aa, type: 2}
+      objectReference: {fileID: 732970029}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
 --- !u!1001 &5745948275861469854

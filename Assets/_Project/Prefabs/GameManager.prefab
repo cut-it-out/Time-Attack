@@ -46,8 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTimerValue: 75
   ModifyTimerEvent: {fileID: 11400000, guid: 365d4409c8138e348bd05fd46eb65bc8, type: 2}
-  onPauseEvent: {fileID: 11400000, guid: 403ab536c8f572f4cae9edf5693850aa, type: 2}
+  PauseGameEvent: {fileID: 11400000, guid: 403ab536c8f572f4cae9edf5693850aa, type: 2}
   onStartButtonClick: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
   onRestartButtonClick: {fileID: 11400000, guid: 3bdf5d01914da3a4f9d89bf9a144e360, type: 2}
   onQuitButtonClick: {fileID: 11400000, guid: 24c7090b42fd1bb438e14e4da8fb9164, type: 2}
   onTimerUpdated: {fileID: 11400000, guid: b5300ab32ae0ce64eaada3609d6892f5, type: 2}
+  onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
+  playerObject: {fileID: 0}
