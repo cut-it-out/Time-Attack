@@ -23,6 +23,11 @@ namespace TimeAttack
         [Header("Player")]
         [SerializeField] GameObject playerObject;
 
+        [Header("Systems/Managers")]
+        [SerializeField] AudioManager audioManager;
+        
+        public AudioManager AudioManager => audioManager;
+
         public float GameCountDownTime { get; private set; }
         public float GameScoreTime { get; private set; }
         private Coroutine countdownTimerCR;
@@ -52,8 +57,6 @@ namespace TimeAttack
             onQuitButtonClick.OnEventRaised += ExitGame;
 
             InputManager.GetInstance().OnPauseMenuToggle += OnPauseKeyToggle;
-
-            //StartGame();
         }
 
         private void OnPauseKeyToggle()
