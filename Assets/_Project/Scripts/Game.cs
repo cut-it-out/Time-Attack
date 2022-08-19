@@ -21,7 +21,9 @@ namespace TimeAttack
         [SerializeField] GameEventVoidSO onGameOver;
 
         public float GameCountDownTime { get; private set; }
+        public float GameScoreTime { get; private set; }
         private Coroutine countdownTimerCR;
+        private Coroutine gameScoreTimerCR;
 
 
         // Game related
@@ -60,11 +62,13 @@ namespace TimeAttack
         private void StartGame()
         {
             StopCountdownTimer();
+            StopGameScoreTimer();
             IsGameOver = false;
             PauseGame(false); // to make sure we don't stuck in pause
 
             canvasManager.SwitchCanvas(CanvasType.GameUI);
             InitCountdownTimer(initialTimerValue);
+            StartGameScoreTimer();
 
         }
 
@@ -74,8 +78,9 @@ namespace TimeAttack
         }
         private void GameOver()
         {
-            StopCountdownTimer();
             onGameOver.RaiseEvent();
+            StopCountdownTimer();
+            StopGameScoreTimer();
 
             // display gameover screen
             IsGameOver = true;
@@ -107,6 +112,32 @@ namespace TimeAttack
         #endregion
 
         #region Timer Functions
+
+        private void StartGameScoreTimer()
+        {
+            StopGameScoreTimer();
+            gameScoreTimerCR = StartCoroutine(GameCountDownTimer());
+        }
+
+        private void StopGameScoreTimer()
+        {
+            if (gameScoreTimerCR != null)
+            {
+                StopCoroutine(gameScoreTimerCR);
+                gameScoreTimerCR = null;
+            }
+        }
+
+        IEnumerator GameCountDownTimer()
+        {
+            GameScoreTime = 0f;
+            
+            while (true)
+            {
+                yield return new WaitForSeconds(1f);
+                GameScoreTime += 1f;
+            }
+        }
 
         private void StartCountdownTimer()
         {
