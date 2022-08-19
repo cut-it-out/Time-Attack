@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3255824618535065694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4817703877749828294}
@@ -81,9 +81,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010642946, y: 0.006385803}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.39357036
 --- !u!1 &8031496683889126902
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2ddfa37edf71dc468fb36530b64b4e9, type: 2}
+  - {fileID: 2100000, guid: 312e19714e8a4484681458712891d701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -94,8 +94,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 1.1120989, y: -0.73879826}
-      - {x: 1.215293, y: -0.5617566}
-      - {x: 1.0418988, y: -0.46087217}
+      - {x: 1.1906581, y: -0.61102676}
+      - {x: 1.0123367, y: -0.5117847}
       - {x: 0.9370931, y: -0.632492}
       - {x: 0.65721804, y: -0.9156653}
       - {x: 0.24780157, y: -1.1059544}
@@ -212,8 +212,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9143a22b1ef8d144bb4c2ffd9dd672bf, type: 3}
-  m_Color: {r: 0.990566, g: 0.06603774, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9df835ade2451304788456e8d169e0eb, type: 3}
+  m_Color: {r: 0.7264151, g: 0.082436554, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
