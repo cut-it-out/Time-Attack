@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 1313328978}
   - component: {fileID: 1313328977}
   m_Layer: 0
-  m_Name: bg_gradient_16x9
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +643,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 13f1297f7b6075144b84b6d4e106560d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -664,12 +664,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d20da1e1363fdf4fa43ab4554bac742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 681ae267726d210489bf2341647c72bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.09}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -803,6 +803,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3028376829211613152, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7dcec7784361af64482b1b0caec771be, type: 2}
     - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1207,6 +1211,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7808688069730300936, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808688069730300936, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d20da1e1363fdf4fa43ab4554bac742, type: 3}
     - target: {fileID: 7808688069730300942, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1437,6 +1449,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8990340703631261316, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2ddfa37edf71dc468fb36530b64b4e9, type: 2}
     - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
       propertyPath: m_RootOrder
       value: 7
