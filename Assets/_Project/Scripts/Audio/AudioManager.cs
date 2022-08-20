@@ -35,11 +35,12 @@ namespace TimeAttack
 		public float SFXVolume => sfxVolume;
 		public float MusicVolume => musicVolume;
 
-		const string MASTER_VOLUME_PARAM_NAME = "MasterVolume";
-		const string MUSIC_VOLUME_PARAM_NAME = "MusicVolume";
-		const string SFX_VOLUME_PARAM_NAME = "SFXVolume";
+		private const string MASTER_VOLUME_PARAM_NAME = "MasterVolume";
+		private const string MUSIC_VOLUME_PARAM_NAME = "MusicVolume";
+		private const string SFX_VOLUME_PARAM_NAME = "SFXVolume";
+        private const float MIXER_VOLUME_MULTIPLIER = 30f;
 
-		private AudioSourcePool soundEmitterPool;
+        private AudioSourcePool soundEmitterPool;
 
         private void Awake()
         {
@@ -115,7 +116,7 @@ namespace TimeAttack
 		}
 		public void SetGroupVolume(string parameterName, float normalizedVolume)
 		{
-			bool volumeSet = audioMixer.SetFloat(parameterName, NormalizedToMixerValue(normalizedVolume));
+			bool volumeSet = audioMixer.SetFloat(parameterName, SliderValueToLog10(normalizedVolume));
 			if (!volumeSet)
 				Debug.LogError("The AudioMixer parameter was not found");
 		}
@@ -146,6 +147,11 @@ namespace TimeAttack
 			// This doesn't allow values over 0dB
 			return (normalizedValue - 1f) * 80f;
 		}
+
+		private float SliderValueToLog10(float value)
+        {
+			return Mathf.Log10(value) * MIXER_VOLUME_MULTIPLIER;
+        }
 
 	}
 }
