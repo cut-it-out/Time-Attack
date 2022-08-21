@@ -716,7 +716,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1131422229771558261, guid: d284b7084b78fa94b8545f289e748968, type: 3}
       propertyPath: m_text
-      value: PLAY_AGAIN
+      value: PLAY AGAIN
       objectReference: {fileID: 0}
     - target: {fileID: 7188596422289981157, guid: d284b7084b78fa94b8545f289e748968, type: 3}
       propertyPath: m_Name
