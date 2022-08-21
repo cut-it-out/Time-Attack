@@ -12,6 +12,10 @@ namespace TimeAttack
         [SerializeField] GameEventVoidSO onGameStart;
         [SerializeField] GameEventVoidSO onGameOver;
 
+        [Header("Sound")]
+        [SerializeField] GameEventAudioSO soundEventChannel;
+        [SerializeField] AudioFileSO soundFile;
+
         public bool IsShooting { get; private set; } = false;
 
         private Coroutine shooterCR;
@@ -46,7 +50,12 @@ namespace TimeAttack
                     shooterSettings.RandomRotation,
                     shooterSettings.RandomDamage,
                     shooterSettings.ProjectileAliveTime);
-                
+
+                if (soundEventChannel != null && soundFile != null)
+                {
+                    soundEventChannel.RaisePlayEvent(soundFile);
+                }
+
                 yield return new WaitForSeconds(shooterSettings.ShootInterval);
             }
         }

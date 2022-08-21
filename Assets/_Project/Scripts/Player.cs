@@ -20,6 +20,11 @@ namespace TimeAttack
         [Header("Events")]
         [SerializeField] GameEventFloatSO ModifyTimerEvent;
 
+        [Header("Sound")]
+        [SerializeField] GameEventAudioSO soundEventChannel;
+        [SerializeField] AudioFileSO goodHitSound;
+        [SerializeField] AudioFileSO badHitSound;
+
         private Vector2 minBounds;
         private Vector2 maxBounds;
         private Vector2 movingDirection;
@@ -59,6 +64,19 @@ namespace TimeAttack
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
             if (projectile != null)
             {
+                if (soundEventChannel != null)
+                {
+                    if (projectile.TimeValue < 0)
+                    {
+                        if (badHitSound != null) 
+                            soundEventChannel.RaisePlayEvent(badHitSound);
+                    }
+                    else
+                    {
+                        if (goodHitSound != null)
+                            soundEventChannel.RaisePlayEvent(goodHitSound);
+                    }
+                }
                 ModifyTimerEvent.RaiseEvent(projectile.TimeValue);
                 projectile.DestroySelf();
             }

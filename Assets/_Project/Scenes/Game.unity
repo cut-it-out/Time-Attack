@@ -366,6 +366,8 @@ MonoBehaviour:
   shooterSettings: {fileID: 11400000, guid: 9b91bb4608411064382f537931a61b32, type: 2}
   onGameStart: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
   onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
+  soundEventChannel: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
+  soundFile: {fileID: 11400000, guid: 1b622415e15e5a442a465fa2fb3f85ba, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +957,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: soundFile
+      value: 
+      objectReference: {fileID: 11400000, guid: c4372c3347e027849a227b8f580a7c40, type: 2}
+    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
       propertyPath: shootInterval
       value: 0.7
       objectReference: {fileID: 0}
@@ -966,6 +972,10 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
+    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
+      propertyPath: soundEventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
 --- !u!1001 &3190633749319393607
@@ -1354,9 +1364,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: badHitSound
+      value: 
+      objectReference: {fileID: 11400000, guid: b89e6bf2594173d45855bb4b71a1514b, type: 2}
+    - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: goodHitSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ee3f02f358bdf54b96e0488159f0d49, type: 2}
+    - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: ModifyTimerEvent
       value: 
       objectReference: {fileID: 11400000, guid: 365d4409c8138e348bd05fd46eb65bc8, type: 2}
+    - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: soundEventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
     - target: {fileID: 3993803617679285072, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
