@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace TimeAttack
 {
     public class Player : MonoBehaviour
     {
+        [Header("General settings")]
+        [SerializeField] Color defaultColor = new Color(1, 1, 1, 1);
+
         [Header("Player Movement")]
         [SerializeField] float playerSpeed = 5f;
-
-        [Header("Player Movement padding")]
         [SerializeField] float paddingLeft;
         [SerializeField] float paddingRight;
 
@@ -25,19 +27,32 @@ namespace TimeAttack
         [SerializeField] AudioFileSO goodHitSound;
         [SerializeField] AudioFileSO badHitSound;
 
+        [Header("Color feedback")]
+        [SerializeField, Range(0,2)] float colorFeedbackInterval = 1f;
+        [SerializeField] SpriteRenderer borderObjectSprite;
+        [SerializeField] TMP_Text digitalClockText;
+        [SerializeField] Color goodHitColor = new Color(0, 1, 0, 1);
+        [SerializeField] Color badHitColor = new Color(1, 0, 0, 1);
+
+
         private Vector2 minBounds;
         private Vector2 maxBounds;
         private Vector2 movingDirection;
 
+        private Coroutine colorFeedbackCR;
+
         // cached variables
         private Game game;
         private InputManager inputManager;
-        private Camera mainCamera;
+        private Camera mainCamera;        
 
         private void Awake()
         {
             game = Game.GetInstance();
             inputManager = InputManager.GetInstance();
+            borderObjectSprite.color = defaultColor;
+            digitalClockText.color = defaultColor;
+
             mainCamera = Camera.main;
             InitBounds();
             ResetPlayerPositionToStart();
@@ -70,11 +85,13 @@ namespace TimeAttack
                     {
                         if (badHitSound != null) 
                             soundEventChannel.RaisePlayEvent(badHitSound);
+                        StartColorFeedback(badHitColor);
                     }
                     else
                     {
                         if (goodHitSound != null)
                             soundEventChannel.RaisePlayEvent(goodHitSound);
+                        StartColorFeedback(goodHitColor);
                     }
                 }
                 ModifyTimerEvent.RaiseEvent(projectile.TimeValue);
@@ -108,6 +125,29 @@ namespace TimeAttack
             newPos.y = playerYPosition;
 
             transform.position = newPos;
+        }
+
+        private void StartColorFeedback(Color color)
+        {
+            StopColorFeedback();
+            colorFeedbackCR = StartCoroutine(ColorFeedback(color));
+        }
+
+        private void StopColorFeedback()
+        {
+            if (colorFeedbackCR != null) StopCoroutine(colorFeedbackCR);
+            colorFeedbackCR = null;
+        }
+
+        IEnumerator ColorFeedback(Color color)
+        {
+            borderObjectSprite.color = color;
+            digitalClockText.color = color;
+
+            yield return new WaitForSeconds(colorFeedbackInterval);
+
+            borderObjectSprite.color = defaultColor;
+            digitalClockText.color = defaultColor;
         }
     }
 }
