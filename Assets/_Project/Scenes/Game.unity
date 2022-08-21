@@ -1379,6 +1379,10 @@ PrefabInstance:
       propertyPath: soundEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
+    - target: {fileID: 3184467592387895816, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3993803617679285072, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
