@@ -16,10 +16,10 @@ MonoBehaviour:
   attackType: 1
   shootInterval: 2
   speed: 2.9
-  circleRotationLimits: {x: -75, y: 0}
+  circleRotationLimits: {x: -141.03, y: 0}
   circleStartRadius: 1
   circleTargetRadius: 20
-  circleOpenSlice: 0.3
+  circleOpenSlice: 7
   damageLimits: {x: 20, y: 30}
   damageIsNegative: 1
   aliveTime: 7
