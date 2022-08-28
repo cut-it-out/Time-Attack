@@ -5,6 +5,8 @@ using UnityEngine;
 namespace TimeAttack
 {
     [RequireComponent(typeof(LineRenderer))]
+    [RequireComponent(typeof(EdgeCollider2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class CircleRenderer : MonoBehaviour
     {
         private Vector3 startingPosition = Vector3.zero;
@@ -20,11 +22,13 @@ namespace TimeAttack
         private const float CIRCLE_WIDTH = .2f;
 
         private LineRenderer circleRenderer;
+        private EdgeCollider2D edgeCollider;
         private float currentRadius;
 
         private void Start()
         {
             circleRenderer = GetComponent<LineRenderer>();
+            edgeCollider = GetComponent<EdgeCollider2D>();
             //circleRenderer.enabled = false;
             circleRenderer.startWidth = CIRCLE_WIDTH;
             circleRenderer.endWidth = CIRCLE_WIDTH;
@@ -57,6 +61,7 @@ namespace TimeAttack
             {
                 currentRadius += speed * Time.deltaTime;
                 DrawCircle(CIRCLE_STEPS, currentRadius, skipSteps, rotationSteps);
+                SetEdgeCollider();
                 //circleRenderer.enabled = true;
             }
         }
@@ -94,6 +99,19 @@ namespace TimeAttack
                 circleRenderer.SetPosition(i, circleRotatedPoints[i]);
             }
 
+        }
+
+        private void SetEdgeCollider()
+        {
+            List<Vector2> edges = new List<Vector2>();
+
+            for (int point = 0; point < circleRenderer.positionCount; point++)
+            {
+                Vector3 circleRendererPoint = circleRenderer.GetPosition(point);
+                edges.Add(new Vector2(circleRendererPoint.x, circleRendererPoint.y));
+            }
+
+            edgeCollider.SetPoints(edges);
         }
 
     }
