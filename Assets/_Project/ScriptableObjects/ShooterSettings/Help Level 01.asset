@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b45a3739a70ab6469ec3df332ac645d, type: 3}
   m_Name: Help Level 01
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3255824618535065694, guid: 8d9313df9278cd94fae53519ccd141b8, type: 3}
+  projectilePrefab: {fileID: 3255824618535065694, guid: 512aeea0df9be944593060e82dedcb6a, type: 3}
   attackType: 0
   shootInterval: 6
   speed: 3
