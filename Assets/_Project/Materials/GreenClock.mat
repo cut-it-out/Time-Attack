@@ -44,8 +44,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_D058C33B: {r: 0.10980392, g: 0.95686275, b: 0.7490196, a: 0}
-    - Color_D948F5FC: {r: 0.007843138, g: 0.6, b: 0.6, a: 0}
+    - Color_D058C33B: {r: 0, g: 8, b: 0, a: 0}
+    - Color_D948F5FC: {r: 0.25190154, g: 8.335077, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6905957168395590409
 MonoBehaviour:

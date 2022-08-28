@@ -51,7 +51,7 @@ namespace TimeAttack
             IsActive = true; // trigger render start
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (IsActive && currentRadius <= targetRadius)
             {
