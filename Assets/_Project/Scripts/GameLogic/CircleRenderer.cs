@@ -32,6 +32,7 @@ namespace TimeAttack
             //circleRenderer.enabled = false;
             circleRenderer.startWidth = CIRCLE_WIDTH;
             circleRenderer.endWidth = CIRCLE_WIDTH;
+            edgeCollider.offset = new Vector2(startingPosition.x * -1f, startingPosition.y * -1f);
 
             DrawCircle(CIRCLE_STEPS, currentRadius);
         }
@@ -55,12 +56,13 @@ namespace TimeAttack
             IsActive = true; // trigger render start
         }
 
-        private void LateUpdate()
+        private void Update()
         {
             if (IsActive && currentRadius <= targetRadius)
             {
                 currentRadius += speed * Time.deltaTime;
                 DrawCircle(CIRCLE_STEPS, currentRadius, skipSteps, rotationSteps);
+                //DrawCircle(CIRCLE_STEPS, currentRadius, skipSteps, Random.Range(0,26));
                 SetEdgeCollider();
                 //circleRenderer.enabled = true;
             }
@@ -92,7 +94,7 @@ namespace TimeAttack
 
             circleRenderer.positionCount = steps - skipSteps;
             Vector3[] circleRotatedPoints = circlePoints;
-            Helpers.ShiftArrayContent(ref circleRotatedPoints, skipSteps);
+            Helpers.ShiftArrayContent(ref circleRotatedPoints, rotationSteps);
 
             for (int i = 0; i < steps - skipSteps; i++)
             {

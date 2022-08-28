@@ -12,7 +12,6 @@ namespace TimeAttack
         {
             if (OnEventRaised != null)
                 OnEventRaised.Invoke(value);
-            Debug.Log($"{name} raised with value {value}");
         }
     }
 }

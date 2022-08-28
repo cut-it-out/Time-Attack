@@ -78,7 +78,7 @@ namespace TimeAttack
             selfDestroyCountdownCR = StartCoroutine(CountdownToSelfDestruct());
         }
 
-        private void LateUpdate()
+        private void Update()
         {
             if (AttackType == AttackType.MoveTowardPlayer)
             {

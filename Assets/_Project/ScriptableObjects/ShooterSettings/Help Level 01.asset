@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3255824618535065694, guid: 8d9313df9278cd94fae53519ccd141b8, type: 3}
   attackType: 0
-  shootInterval: 3.5
+  shootInterval: 5
   speed: 8
-  rotationLimits: {x: 0, y: 0}
-  scaleUpTargetMultiplier: 10
-  smoothTime: 2.5
+  circleRotationLimits: {x: 0, y: 0}
+  circleRandomTreshold: 100
+  circleStartRadius: 1
+  circleTargetRadius: 5
+  circleOpenSlice: 30
   damageLimits: {x: 5, y: 10}
   damageIsNegative: 0
   aliveTime: 6
