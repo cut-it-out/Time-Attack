@@ -38,7 +38,7 @@ namespace TimeAttack
         {
             while (IsShooting)
             {   
-                Vector2 direction = (playerObject.transform.position - this.transform.position).normalized;
+                Vector2 direction = (shooterSettings.RandomDirection - this.transform.position).normalized;
                 Projectile.Create(
                     shooterSettings.ProjectilePrefab.transform,
                     this.transform.position,
@@ -52,8 +52,6 @@ namespace TimeAttack
                     shooterSettings.CircleRandomRotation,
                     shooterSettings.CircleOpenSlice
                     );
-
-                Debug.Log($"CircleRotation: {shooterSettings.CircleRandomRotation}");
 
                 if (soundEventChannel != null && soundFile != null)
                 {
