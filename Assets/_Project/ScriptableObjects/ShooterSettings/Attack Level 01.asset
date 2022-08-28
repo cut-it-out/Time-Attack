@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b45a3739a70ab6469ec3df332ac645d, type: 3}
   m_Name: Attack Level 01
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
+  projectilePrefab: {fileID: 2772435446869747253, guid: 9b70cfbbd9013f4408f295a23cfa812d, type: 3}
   attackType: 1
   shootInterval: 2
   speed: 2.9
-  rotationLimits: {x: -78, y: -9}
-  scaleUpTargetMultiplier: 60
-  smoothTime: 4.07
+  circleRotationLimits: {x: -75, y: 0}
+  circleStartRadius: 1
+  circleTargetRadius: 20
+  circleOpenSlice: 0.3
   damageLimits: {x: 20, y: 30}
   damageIsNegative: 1
   aliveTime: 7

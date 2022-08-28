@@ -31,25 +31,29 @@ namespace TimeAttack
         private void InitShooting()
         {
             IsShooting = true;
-            shooterCR = StartCoroutine(StartShooting());
+            shooterCR = StartCoroutine(Shooting());
         }
 
-        IEnumerator StartShooting()
+        IEnumerator Shooting()
         {
             while (IsShooting)
-            {
+            {   
                 Vector2 direction = (playerObject.transform.position - this.transform.position).normalized;
                 Projectile.Create(
-                    shooterSettings.ProjectilePrefab.transform, 
-                    transform.position,
-                    shooterSettings.AttackType,
-                    shooterSettings.Speed,
-                    shooterSettings.SmoothTime,
-                    direction,
-                    shooterSettings.ScaleUpTargetMultiplier,
-                    shooterSettings.RandomRotation,
+                    shooterSettings.ProjectilePrefab.transform,
+                    this.transform.position,
                     shooterSettings.RandomDamage,
-                    shooterSettings.ProjectileAliveTime);
+                    shooterSettings.ProjectileAliveTime,
+                    shooterSettings.AttackType,
+                    direction,
+                    shooterSettings.Speed,
+                    shooterSettings.CircleStartRadius,
+                    shooterSettings.CircleTargetRadius,
+                    shooterSettings.CircleRandomRotation,
+                    shooterSettings.CircleOpenSlice
+                    );
+
+                Debug.Log($"CircleRotation: {shooterSettings.CircleRandomRotation}");
 
                 if (soundEventChannel != null && soundFile != null)
                 {

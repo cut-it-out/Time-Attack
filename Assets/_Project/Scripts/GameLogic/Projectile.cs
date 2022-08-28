@@ -13,61 +13,65 @@ namespace TimeAttack
 
     public class Projectile : MonoBehaviour
     {
+        public AttackType AttackType { get; private set; }
         public Vector2 MovementDirection { get; private set; }
         public float MovementSpeed { get; private set; }
         public float TimeValue { get; private set; }
-        public AttackType AttackType { get; private set; }
         public float SelfDestructInterval { get; private set; }
-        public Vector3 TargetScale { get; private set; }
-        public float ScaleUpMultiplier { get; private set; }
-        public float SmoothTime { get; private set; }
+        public float CircleStartRadius { get; private set; }
+        public float CircleTargetRadius { get; private set; }
+        public float CircleRotation { get; private set; }
+        public int CircleOpenSlice { get; private set; }
 
         private Coroutine selfDestroyCountdownCR;
-        private Vector3 velocity = Vector3.zero; //for smoothdamp
+        private Coroutine movementCR;
 
         public static Projectile Create(
             Transform prefabTransform,
-            Vector3 worldPosition,
-            AttackType attackType,
-            float speed,
-            float smoothTime,
-            Vector2 moveDirection,
-            float scaleUpTargetMultiplier,
-            float rotation,
+            Vector3 initPosition,
             float timeValue,
-            float selfDestructInterval
+            float selfDestructInterval,
+            AttackType attackType,
+            Vector2 moveDirection,
+            float speed,
+            float circleStartRadius,
+            float circleTargetRadius,
+            float circleRotation, 
+            int circleOpenSlice
             )
         {
-            Transform projectileTransform = Instantiate(prefabTransform, worldPosition, Quaternion.identity);
+            Transform projectileTransform = Instantiate(prefabTransform, initPosition, Quaternion.identity);
 
             Projectile projectile = projectileTransform.GetComponent<Projectile>();
 
+            //if (attackType == AttackType.ScaleUp)
+            //{
+            //    projectileTransform.Rotate(0, 0, circleRotation);
+            //}
+
+            projectile.CircleRotation = circleRotation;
+            projectile.TimeValue = timeValue;
+            projectile.SelfDestructInterval = selfDestructInterval;
+            projectile.AttackType = attackType;
+            projectile.MovementDirection = moveDirection;
+            projectile.MovementSpeed = speed;
+            projectile.CircleStartRadius = circleStartRadius;
+            projectile.CircleTargetRadius = circleTargetRadius;
+            projectile.CircleOpenSlice = circleOpenSlice;
+
             if (attackType == AttackType.ScaleUp)
             {
-                projectileTransform.Rotate(0, 0, rotation);
+                projectile.gameObject.GetComponent<CircleRenderer>().InitCircleRenderer(
+                    projectile.transform.position,
+                    projectile.CircleStartRadius, 
+                    projectile.CircleTargetRadius,
+                    projectile.MovementSpeed,
+                    projectile.CircleOpenSlice,
+                    projectile.CircleRotation);
             }
-
-            //projectile.SetSpeed(speed);
-            //projectile.SetDirection(moveDirection);
-            //projectile.SetTimeValue(timeValue);
-            //projectile.SetAttackType(attackType);
-            projectile.MovementSpeed = speed;
-            projectile.MovementDirection = moveDirection;
-            projectile.TimeValue = timeValue;
-            projectile.AttackType = attackType;
-            projectile.SelfDestructInterval = selfDestructInterval;
-            projectile.TargetScale = projectileTransform.localScale * scaleUpTargetMultiplier;
-            projectile.ScaleUpMultiplier = scaleUpTargetMultiplier;
-            projectile.SmoothTime = smoothTime;
 
             return projectile;
         }
-
-        //public void SetSpeed(float speed) => MovementSpeed = speed;
-        //public void SetDirection(Vector2 direction) => MovementDirection = direction;
-        //public void SetTimeValue(float value) => TimeValue = value;
-        //public void SetAttackType(AttackType type) => AttackType = type;
-        //public void SetSelfDestructInterval(float value) => SelfDestructInterval = value;
 
         private void Start()
         {
@@ -76,24 +80,10 @@ namespace TimeAttack
 
         private void Update()
         {
-            switch (AttackType)
+            if (AttackType == AttackType.MoveTowardPlayer)
             {
-                case AttackType.MoveTowardPlayer:
-                    HandleMovement();
-                    break;
-                case AttackType.ScaleUp:
-                    HandleScaleUp();
-                    break;
-                default:
-                    break;
+                HandleMovement();
             }
-        }
-
-        private void HandleScaleUp()
-        {
-            //transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * ScaleUpMultiplier, Time.deltaTime * MovementSpeed);
-            //transform.localScale = Vector3.Lerp(transform.localScale, TargetScale, Time.deltaTime * MovementSpeed);
-            transform.localScale = Vector3.SmoothDamp(transform.localScale, TargetScale, ref velocity, SmoothTime);
         }
 
         private void HandleMovement()
@@ -103,7 +93,7 @@ namespace TimeAttack
         }
 
         IEnumerator CountdownToSelfDestruct()
-        {
+        {            
             yield return new WaitForSeconds(SelfDestructInterval);
             DestroySelf();
         }

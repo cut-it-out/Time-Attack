@@ -14,9 +14,10 @@ namespace TimeAttack
         [SerializeField] AttackType attackType;
         [SerializeField] float shootInterval = 1f;
         [SerializeField, Space] float speed = 10f;
-        [SerializeField] Vector2 rotationLimits = new Vector2(-75f, 0f);
-        [SerializeField] float scaleUpTargetMultiplier = 10f;
-        [SerializeField][Tooltip("this is for scaling")] float smoothTime = 2.5f;
+        [SerializeField] Vector2 circleRotationLimits = new Vector2(-75f, 0f);
+        [SerializeField] float circleStartRadius = 1f;
+        [SerializeField] float circleTargetRadius = 5f;
+        [SerializeField,Tooltip("how big size should be missing from the circle"), Range(5, 50)] int circleOpenSlice = 30;
 
         [Header("Damage")]
         [SerializeField] Vector2 damageLimits = new Vector2(15f, 30f);
@@ -32,9 +33,10 @@ namespace TimeAttack
         public float RandomDamage { get { 
             return (damageIsNegative == true ? -1f : 1f) * UnityEngine.Random.Range(damageLimits.x, damageLimits.y); } }
         public float ProjectileAliveTime { get { return aliveTime; } }
-        public float RandomRotation { get { return UnityEngine.Random.Range(rotationLimits.x, rotationLimits.y); } }
-        public Vector2 RotationLimits { get { return rotationLimits; } }
-        public float ScaleUpTargetMultiplier { get { return scaleUpTargetMultiplier; } }
-        public float SmoothTime { get { return smoothTime; } }
+        public float CircleRandomRotation { get { return UnityEngine.Random.Range(circleRotationLimits.x, circleRotationLimits.y); } }
+        public Vector2 RotationLimits { get { return circleRotationLimits; } }
+        public float CircleStartRadius { get { return circleStartRadius; } }
+        public float CircleTargetRadius { get { return circleTargetRadius; } }
+        public int CircleOpenSlice { get { return circleOpenSlice; } }
     }
 }
