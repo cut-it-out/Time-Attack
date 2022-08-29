@@ -23,7 +23,10 @@ namespace TimeAttack
 
         private void OnDisable()
         {
-            InputManager.GetInstance().OnSpaceKeyPressed -= OnSpaceKeyPressed;
+            if (InputManager.GetInstance() != null)
+            {
+                InputManager.GetInstance().OnSpaceKeyPressed -= OnSpaceKeyPressed;
+            }
         }
 
     }
