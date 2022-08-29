@@ -67,7 +67,11 @@ namespace TimeAttack
 
         private void OnPauseKeyToggle()
         {
-            PauseGameEvent.RaiseEvent(!IsPaused);
+            if(canvasManager.GetCanvasController(CanvasType.GameUI).gameObject.activeSelf
+                || canvasManager.GetCanvasController(CanvasType.PauseMenuUI).gameObject.activeSelf)
+            {
+                PauseGameEvent.RaiseEvent(!IsPaused);
+            }
         }
 
         #region Basic Game Stuff (start, reset, pause, etc)

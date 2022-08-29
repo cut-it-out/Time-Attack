@@ -437,6 +437,7 @@ MonoBehaviour:
   playerXPosition: 0
   playerYPosition: -4
   ModifyTimerEvent: {fileID: 11400000, guid: 365d4409c8138e348bd05fd46eb65bc8, type: 2}
+  onStartGame: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
   soundEventChannel: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
   goodHitSound: {fileID: 11400000, guid: 4ee3f02f358bdf54b96e0488159f0d49, type: 2}
   badHitSound: {fileID: 11400000, guid: 5a8587d14ce8d9d459377f8e8cb0eee4, type: 2}

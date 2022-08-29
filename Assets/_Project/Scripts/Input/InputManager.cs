@@ -14,6 +14,8 @@ namespace TimeAttack
         public event PauseMenuToggle OnPauseMenuToggle;
         public delegate void AnyKeyPress();
         public event AnyKeyPress OnAnyKeyPressed;
+        public delegate void SpaceKeyPress();
+        public event SpaceKeyPress OnSpaceKeyPressed;
 
         #endregion
 
@@ -42,11 +44,17 @@ namespace TimeAttack
             gameInput.GamePlay.Movement.canceled += ctx => OnWASDPressed(ctx);
             gameInput.GamePlay.PauseMenuActivation.started += ctx => PauseMenuKeyPressed(ctx);
             gameInput.GamePlay.AnyKeyPress.started += ctx => AnyKeyPressed(ctx);
+            gameInput.GamePlay.StartGameWithSpace.started += ctx => SpaceKeyPressed(ctx);
         }
 
         private void AnyKeyPressed(InputAction.CallbackContext ctx)
         {
             OnAnyKeyPressed?.Invoke();
+        }
+
+        private void SpaceKeyPressed(InputAction.CallbackContext ctx)
+        {
+            OnSpaceKeyPressed?.Invoke();
         }
 
         private void PauseMenuKeyPressed(InputAction.CallbackContext ctx)

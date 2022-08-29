@@ -22,6 +22,7 @@ namespace TimeAttack
         
         [Header("Events")]
         [SerializeField] GameEventFloatSO ModifyTimerEvent;
+        [SerializeField] GameEventVoidSO onStartGame;
 
         [Header("Sound")]
         [SerializeField] GameEventAudioSO soundEventChannel;
@@ -69,11 +70,13 @@ namespace TimeAttack
         {
             // subscribe for movement
             inputManager.OnMovement += InputManager_OnMovement;
+            onStartGame.OnEventRaised += ResetPlayerPositionToStart;
         }
 
         private void OnDisable()
         {
             inputManager.OnMovement -= InputManager_OnMovement;
+            onStartGame.OnEventRaised -= ResetPlayerPositionToStart;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

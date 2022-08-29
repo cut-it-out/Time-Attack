@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "StartGameWithSpace",
+                    "type": "Button",
+                    "id": "36814d78-1c63-4361-8d33-3215ff09a04a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "AnyKeyPress",
                     "type": "Button",
                     "id": "7d8c3ec5-546c-4085-818b-f310085acdd7",
@@ -119,6 +128,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "AnyKeyPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "556fe1d2-6502-41ab-a80b-fc6c0675a31d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartGameWithSpace",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

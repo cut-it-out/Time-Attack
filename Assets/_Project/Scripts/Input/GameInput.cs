@@ -46,6 +46,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""StartGameWithSpace"",
+                    ""type"": ""Button"",
+                    ""id"": ""36814d78-1c63-4361-8d33-3215ff09a04a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""AnyKeyPress"",
                     ""type"": ""Button"",
                     ""id"": ""7d8c3ec5-546c-4085-818b-f310085acdd7"",
@@ -143,6 +152,17 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""AnyKeyPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""556fe1d2-6502-41ab-a80b-fc6c0675a31d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGameWithSpace"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -153,6 +173,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Movement = m_GamePlay.FindAction("Movement", throwIfNotFound: true);
         m_GamePlay_PauseMenuActivation = m_GamePlay.FindAction("PauseMenuActivation", throwIfNotFound: true);
+        m_GamePlay_StartGameWithSpace = m_GamePlay.FindAction("StartGameWithSpace", throwIfNotFound: true);
         m_GamePlay_AnyKeyPress = m_GamePlay.FindAction("AnyKeyPress", throwIfNotFound: true);
     }
 
@@ -215,6 +236,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
     private readonly InputAction m_GamePlay_Movement;
     private readonly InputAction m_GamePlay_PauseMenuActivation;
+    private readonly InputAction m_GamePlay_StartGameWithSpace;
     private readonly InputAction m_GamePlay_AnyKeyPress;
     public struct GamePlayActions
     {
@@ -222,6 +244,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public GamePlayActions(@GameInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_GamePlay_Movement;
         public InputAction @PauseMenuActivation => m_Wrapper.m_GamePlay_PauseMenuActivation;
+        public InputAction @StartGameWithSpace => m_Wrapper.m_GamePlay_StartGameWithSpace;
         public InputAction @AnyKeyPress => m_Wrapper.m_GamePlay_AnyKeyPress;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
@@ -238,6 +261,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @PauseMenuActivation.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivation;
                 @PauseMenuActivation.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivation;
                 @PauseMenuActivation.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivation;
+                @StartGameWithSpace.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnStartGameWithSpace;
+                @StartGameWithSpace.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnStartGameWithSpace;
+                @StartGameWithSpace.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnStartGameWithSpace;
                 @AnyKeyPress.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAnyKeyPress;
                 @AnyKeyPress.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAnyKeyPress;
                 @AnyKeyPress.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAnyKeyPress;
@@ -251,6 +277,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @PauseMenuActivation.started += instance.OnPauseMenuActivation;
                 @PauseMenuActivation.performed += instance.OnPauseMenuActivation;
                 @PauseMenuActivation.canceled += instance.OnPauseMenuActivation;
+                @StartGameWithSpace.started += instance.OnStartGameWithSpace;
+                @StartGameWithSpace.performed += instance.OnStartGameWithSpace;
+                @StartGameWithSpace.canceled += instance.OnStartGameWithSpace;
                 @AnyKeyPress.started += instance.OnAnyKeyPress;
                 @AnyKeyPress.performed += instance.OnAnyKeyPress;
                 @AnyKeyPress.canceled += instance.OnAnyKeyPress;
@@ -262,6 +291,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnPauseMenuActivation(InputAction.CallbackContext context);
+        void OnStartGameWithSpace(InputAction.CallbackContext context);
         void OnAnyKeyPress(InputAction.CallbackContext context);
     }
 }
