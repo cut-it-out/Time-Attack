@@ -131,7 +131,7 @@ namespace TimeAttack
         private void StartGameScoreTimer()
         {
             StopGameScoreTimer();
-            gameScoreTimerCR = StartCoroutine(GameCountDownTimer());
+            gameScoreTimerCR = StartCoroutine(GameScoreTimer());
         }
 
         private void StopGameScoreTimer()
@@ -143,7 +143,7 @@ namespace TimeAttack
             }
         }
 
-        IEnumerator GameCountDownTimer()
+        IEnumerator GameScoreTimer()
         {
             GameScoreTime = 0f;
             
@@ -173,7 +173,7 @@ namespace TimeAttack
         {
             if (countdownTimerCR != null)
             {
-                if (timeToAdd < 0 && GameCountDownTime <= timeToAdd)
+                if (timeToAdd < 0 && GameCountDownTime <= Mathf.Abs(timeToAdd))
                 {
                     TimerIsUp();
                 }
@@ -194,7 +194,7 @@ namespace TimeAttack
         private void TimerIsUp()
         {
             GameCountDownTime = 0f;
-            onTimerUpdated.RaiseEvent(GameCountDownTime);
+            //onTimerUpdated.RaiseEvent(GameCountDownTime);
             GameOver();
         }
 

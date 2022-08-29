@@ -1575,6 +1575,30 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d20da1e1363fdf4fa43ab4554bac742, type: 3}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190633749245573840, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 13f1297f7b6075144b84b6d4e106560d, type: 2}
     - target: {fileID: 3190633749245573842, guid: cca6d0da4805e0249827e16632e15fb1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1808,6 +1832,10 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 732970029}
+    - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
+      propertyPath: initialTimerValue
+      value: 61
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
 --- !u!1001 &5160585914221663052
@@ -1885,6 +1913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202527929440204209, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
+      propertyPath: onGameOver
+      value: 
+      objectReference: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
     - target: {fileID: 5745948273983947180, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2259,6 +2291,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d20da1e1363fdf4fa43ab4554bac742, type: 3}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821727128524626148, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 13f1297f7b6075144b84b6d4e106560d, type: 2}
     - target: {fileID: 8821727128524626150, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
