@@ -19,7 +19,7 @@ namespace TimeAttack
         public bool IsActive { get; private set; } = false;
 
         private const int CIRCLE_STEPS = 120;
-        private const float CIRCLE_WIDTH = .2f;
+        private const float CIRCLE_WIDTH = .25f;
 
         private LineRenderer circleRenderer;
         private EdgeCollider2D edgeCollider;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8990340703631261317}
   - component: {fileID: 8990340703631261316}
+  - component: {fileID: 616598307}
   m_Layer: 0
   m_Name: Good_Clock
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8990340703631261319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.77, y: 3.89, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 186725781715f544b98052944eb2a219, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &616598307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8990340703631261319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418c202b2e7514440b5d021f23a4c934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooterSettings: {fileID: 11400000, guid: 9b91bb4608411064382f537931a61b32, type: 2}
+  onGameStart: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
+  onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
+  soundEventChannel: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
+  soundFile: {fileID: 11400000, guid: 1b622415e15e5a442a465fa2fb3f85ba, type: 2}

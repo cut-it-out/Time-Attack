@@ -195,9 +195,9 @@ MonoBehaviour:
   musicVolumeEventChannel: {fileID: 11400000, guid: 24eea9428ed0585409a28994a43be15c, type: 2}
   SFXVolumeEventChannel: {fileID: 11400000, guid: 451f9c8e487452a4aa53bac9f4b837d7, type: 2}
   audioMixer: {fileID: 24100000, guid: ac0221fbc8c4a694280a1508a4f6da62, type: 2}
-  masterVolume: 0.8
-  musicVolume: 0.8
-  sfxVolume: 0.8
+  masterVolume: 0.7
+  musicVolume: 0.7
+  sfxVolume: 0.7
 --- !u!114 &4600727610683423205
 MonoBehaviour:
   m_ObjectHideFlags: 0

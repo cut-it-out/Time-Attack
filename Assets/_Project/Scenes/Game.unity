@@ -351,28 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98c023c7584ca49b5effb748f2aae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &616598304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8990340703631261319, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
-  m_PrefabInstance: {fileID: 8990340703990516826}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &616598307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616598304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418c202b2e7514440b5d021f23a4c934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shooterSettings: {fileID: 11400000, guid: 9b91bb4608411064382f537931a61b32, type: 2}
-  onGameStart: {fileID: 11400000, guid: b3614bbf451e69f4191b6a335c0d1a50, type: 2}
-  onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
-  soundEventChannel: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
-  soundFile: {fileID: 11400000, guid: 1b622415e15e5a442a465fa2fb3f85ba, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,37 +1473,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3028376829211613152, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613152, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613152, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613152, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d76188feab1fceb41b911dc6e74e555c, type: 2}
     - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3028376829211613153, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1571,38 +1521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bad_Clock
       objectReference: {fileID: 0}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: speed
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 732970029}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: damageMin
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: soundFile
-      value: 
-      objectReference: {fileID: 11400000, guid: c4372c3347e027849a227b8f580a7c40, type: 2}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: shootInterval
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: shooterSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: ab94490609fc97143acdda5f6658492c, type: 2}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3255824618535065694, guid: 11660341782a14b4984c2ccee38051f1, type: 3}
-    - target: {fileID: 9169563470894996389, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
-      propertyPath: soundEventChannel
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ca3687c391bbea40a1295486334cfdc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cffb3d6763d057342991a0017ef01c60, type: 3}
 --- !u!1001 &3190633749319393607
@@ -2541,25 +2459,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8990340703631261316, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 186725781715f544b98052944eb2a219, type: 2}
     - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8990340703631261317, guid: 56bbce98cc56ddf4f90ee2fdac636cc7, type: 3}
       propertyPath: m_LocalPosition.x
