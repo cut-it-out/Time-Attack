@@ -30,6 +30,7 @@ namespace TimeAttack
 
         private void InitShooting()
         {
+            StopShooting();
             IsShooting = true;
             shooterCR = StartCoroutine(Shooting());
         }

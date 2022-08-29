@@ -20,6 +20,7 @@ namespace TimeAttack
         [Header("Broadcasting on")]
         [SerializeField] GameEventFloatSO onTimerUpdated;
         [SerializeField] GameEventVoidSO onGameOver;
+        [SerializeField] GameEventVoidSO clearProjectiles;
 
         [Header("Player")]
         [SerializeField] GameObject playerObject;
@@ -85,12 +86,14 @@ namespace TimeAttack
         }
 
         public void RestartGame()
-        {            
-            StartGame();
+        {
+            clearProjectiles.RaiseEvent();
+            onStartButtonClick.RaiseEvent();
         }
         private void GameOver()
         {
             onGameOver.RaiseEvent();
+            clearProjectiles.RaiseEvent();
             StopCountdownTimer();
             StopGameScoreTimer();
 

@@ -13,6 +13,8 @@ namespace TimeAttack
 
     public class Projectile : MonoBehaviour
     {
+        [SerializeField] GameEventVoidSO ClearProjectilesEvent;
+
         public AttackType AttackType { get; private set; }
         public Vector2 MovementDirection { get; private set; }
         public float MovementSpeed { get; private set; }
@@ -84,6 +86,21 @@ namespace TimeAttack
             {
                 HandleMovement();
             }
+        }
+
+        private void OnEnable()
+        {
+            ClearProjectilesEvent.OnEventRaised += DeleteProjectile;
+        }
+
+        private void OnDisable()
+        {
+            ClearProjectilesEvent.OnEventRaised -= DeleteProjectile;
+        }
+
+        private void DeleteProjectile()
+        {
+            DestroySelf(0f);
         }
 
         private void HandleMovement()

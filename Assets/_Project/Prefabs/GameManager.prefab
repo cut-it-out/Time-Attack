@@ -52,4 +52,6 @@ MonoBehaviour:
   onQuitButtonClick: {fileID: 11400000, guid: 24c7090b42fd1bb438e14e4da8fb9164, type: 2}
   onTimerUpdated: {fileID: 11400000, guid: b5300ab32ae0ce64eaada3609d6892f5, type: 2}
   onGameOver: {fileID: 11400000, guid: b3051cb5d413e954aa059483f52626dc, type: 2}
+  clearProjectiles: {fileID: 11400000, guid: 44a4e6f6b6711294aa8028f9e5ad85f8, type: 2}
   playerObject: {fileID: 0}
+  audioManager: {fileID: 0}
