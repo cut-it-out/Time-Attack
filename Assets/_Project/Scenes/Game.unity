@@ -2050,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7702269363412980598, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_text
+      value: 'Created by Andras Kecskemeti, special thanks to frenlabs '
+      objectReference: {fileID: 0}
     - target: {fileID: 7808688069730300942, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
