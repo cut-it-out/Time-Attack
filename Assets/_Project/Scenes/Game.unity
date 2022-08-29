@@ -1464,6 +1464,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -60.19995
       objectReference: {fileID: 0}
+    - target: {fileID: 8276128152958491484, guid: cbf153426ebfa0f4187d177a42dfc47f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbf153426ebfa0f4187d177a42dfc47f, type: 3}
 --- !u!1001 &3028376828859227210
@@ -1915,7 +1919,7 @@ PrefabInstance:
     - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: badHitSound
       value: 
-      objectReference: {fileID: 11400000, guid: b89e6bf2594173d45855bb4b71a1514b, type: 2}
+      objectReference: {fileID: 11400000, guid: 5a8587d14ce8d9d459377f8e8cb0eee4, type: 2}
     - target: {fileID: 1894300468, guid: 8fb9c74ef21963640a09b4450f2ee136, type: 3}
       propertyPath: goodHitSound
       value: 
@@ -2160,6 +2164,22 @@ PrefabInstance:
     - target: {fileID: 4906152803796823649, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689490084178792989, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689490084178792989, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689490084178792989, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689490084178792989, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TimeAttack.GameEventVoidSO, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6407396693886282552, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
       propertyPath: m_AnchorMax.x
