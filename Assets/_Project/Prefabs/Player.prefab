@@ -443,7 +443,6 @@ MonoBehaviour:
   colorFeedbackInterval: 1
   borderObjectSprite: {fileID: 0}
   digitalClockText: {fileID: 0}
-  spotLight: {fileID: 0}
   goodHitColor: {r: 0, g: 1, b: 0, a: 1}
   badHitColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &7798008277004858437
@@ -480,8 +479,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00637187, y: -0.0034368038}
-  m_Size: {x: 3.252737, y: 1.2790884}
+  m_Offset: {x: -0.03120264, y: -0.0034368006}
+  m_Size: {x: 3.3272388, y: 1.2790943}
   m_Direction: 1
 --- !u!1 &5745948275724034745
 GameObject:

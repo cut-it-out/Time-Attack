@@ -66,8 +66,6 @@ namespace TimeAttack
                         );
 
                 previousRandomRotation = randomRotation;
-                Debug.Log($"previousRandomRotation: {previousRandomRotation}, circleRotationLimits.x: {circleRotationLimits.x}, circleRotationLimits.y: {circleRotationLimits.y}");
-                Debug.Log($"randomRotation: {randomRotation}");
                 return randomRotation;
             } 
         }
