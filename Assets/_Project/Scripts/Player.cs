@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 namespace TimeAttack
 {
@@ -130,25 +131,12 @@ namespace TimeAttack
 
         private void StartColorFeedback(Color color)
         {
-            StopColorFeedback();
-            colorFeedbackCR = StartCoroutine(ColorFeedback(color));
-        }
-
-        private void StopColorFeedback()
-        {
-            if (colorFeedbackCR != null) StopCoroutine(colorFeedbackCR);
-            colorFeedbackCR = null;
-        }
-
-        IEnumerator ColorFeedback(Color color)
-        {
             borderObjectSprite.color = color;
             digitalClockText.color = color;
 
-            yield return new WaitForSeconds(colorFeedbackInterval);
-
-            borderObjectSprite.color = defaultColor;
-            digitalClockText.color = defaultColor;
+            borderObjectSprite.DOColor(defaultColor, colorFeedbackInterval);
+            digitalClockText.DOColor(defaultColor, colorFeedbackInterval);
         }
+
     }
 }

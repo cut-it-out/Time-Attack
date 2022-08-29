@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace TimeAttack
 {
@@ -44,7 +45,11 @@ namespace TimeAttack
 
         protected override void Awake()
         {
-            base.Awake();            
+            base.Awake();
+
+            //init tweening
+            DOTween.Init();
+            //DOTween.SetTweensCapacity(200, 50);
         }
 
         private void Start()
