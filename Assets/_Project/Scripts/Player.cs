@@ -50,6 +50,7 @@ namespace TimeAttack
         {
             game = Game.GetInstance();
             inputManager = InputManager.GetInstance();
+
             borderObjectSprite.color = defaultColor;
             digitalClockText.color = defaultColor;
 
