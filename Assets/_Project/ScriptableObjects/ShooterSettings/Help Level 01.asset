@@ -15,7 +15,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3255824618535065694, guid: 512aeea0df9be944593060e82dedcb6a, type: 3}
   attackType: 0
   shootInterval: 6
-  speed: 3
+  speed: 3.3
   moveTowardDirectionY: -4
   moveTowardDirectionX: -8
   circleRotationLimits: {x: 0, y: 0}

@@ -1834,7 +1834,7 @@ PrefabInstance:
       objectReference: {fileID: 732970029}
     - target: {fileID: 9185124329358228310, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
       propertyPath: initialTimerValue
-      value: 61
+      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3a0c1522f9d86419dde76a63b61e6e, type: 3}
@@ -2142,6 +2142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7808688069730300943, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9033736533585136548, guid: ceae5cd1a6c75c040abac5ddf404586b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2159,38 +2163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 648336834}
     m_Modifications:
-    - target: {fileID: 3120915577573117385, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120915577573117385, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120915577573117385, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3120915577573117385, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4899450662794404122, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4899450662794404122, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4899450662794404122, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4899450662794404122, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8821727128524626150, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2278,10 +2250,6 @@ PrefabInstance:
     - target: {fileID: 8821727128524626153, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
       propertyPath: m_Name
       value: GameOverUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821727128524626153, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ba5628f5e75cca47af75ada4fddff1e, type: 3}
